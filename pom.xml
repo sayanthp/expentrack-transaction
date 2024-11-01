@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.saytech.expentrack</groupId>
-	<artifactId>expentrack-expense-service</artifactId>
+	<artifactId>expentrack-transaction-service</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
-	<name>ExpenTrack expense service</name>
+	<name>ExpenTrack transaction service</name>
 	<description>Handles all expense-related functionalities</description>
 	<url/>
 	<licenses>
