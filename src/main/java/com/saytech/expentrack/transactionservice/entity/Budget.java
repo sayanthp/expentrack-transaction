@@ -15,26 +15,24 @@ public class Budget {
 
     @Column(nullable = false)
     @Min(value = 0, message = "Amount must be a positive value")
-    private double amount;  // Renamed to 'amount' for consistency
+    private double amount;
 
-    @Enumerated(EnumType.STRING) // Store enum as a string
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private CategoryType category;
 
     @Column(nullable = false)
     private Long userId;
 
-    // No-argument constructor
     public Budget() {}
 
-    // Parameterized constructor
-    public Budget(double amount, CategoryType category, Long userId) {  // Consistent with 'amount' field
+    public Budget(double amount, CategoryType category, Long userId) {
         this.amount = amount;
         this.category = category;
         this.userId = userId;
     }
 
-    // Getters and Setters
+
     public Long getId() {
         return id;
     }
@@ -44,10 +42,10 @@ public class Budget {
     }
 
     public double getAmount() {
-        return amount;  // Changed to 'amount' for consistency
+        return amount;
     }
 
-    public void setAmount(double amount) {  // Changed to 'amount' for consistency
+    public void setAmount(double amount) {
         this.amount = amount;
     }
 
@@ -67,24 +65,24 @@ public class Budget {
         this.userId = userId;
     }
 
-    // Override toString
+
     @Override
     public String toString() {
         return "Budget{" +
                 "id=" + id +
-                ", amount=" + amount +  // Changed to 'amount' for consistency
+                ", amount=" + amount +
                 ", category=" + category +
                 ", userId=" + userId +
                 '}';
     }
 
-    // Override equals and hashCode
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Budget)) return false;
         Budget budget = (Budget) o;
-        return Double.compare(budget.amount, amount) == 0 &&  // Changed to 'amount' for consistency
+        return Double.compare(budget.amount, amount) == 0 &&
                 id.equals(budget.id) &&
                 category == budget.category &&
                 userId.equals(budget.userId);
@@ -92,6 +90,6 @@ public class Budget {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, amount, category, userId);  // Changed to 'amount' for consistency
+        return Objects.hash(id, amount, category, userId);
     }
 }

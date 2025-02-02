@@ -6,22 +6,19 @@ import java.util.Objects;
 public class BudgetDTO {
 
     private Long id;
-    private double amount;  // Renamed to 'amount' to match the entity field
+    private double amount;
     private Long userId;
     private CategoryType category;
 
-    // No-argument constructor
     public BudgetDTO() {}
 
-    // Parameterized constructor
-    public BudgetDTO(Long id, double amount, Long userId, CategoryType category) {  // Renamed 'limit' to 'amount'
+    public BudgetDTO(Long id, double amount, Long userId, CategoryType category) {
         this.id = id;
-        this.amount = amount;  // Correct field name
+        this.amount = amount;
         this.userId = userId;
         this.category = category;
     }
 
-    // Getters and Setters
     public Long getId() {
         return id;
     }
@@ -30,11 +27,11 @@ public class BudgetDTO {
         this.id = id;
     }
 
-    public double getAmount() {  // Renamed to 'amount' to match the field
+    public double getAmount() {
         return amount;
     }
 
-    public void setAmount(double amount) {  // Renamed to 'amount' to match the field
+    public void setAmount(double amount) {
         this.amount = amount;
     }
 
@@ -54,24 +51,21 @@ public class BudgetDTO {
         this.category = category;
     }
 
-    // Override toString
     @Override
     public String toString() {
         return "BudgetDTO{" +
                 "id=" + id +
-                ", amount=" + amount +  // Renamed to 'amount'
+                ", amount=" + amount +
                 ", userId=" + userId +
                 ", category=" + category +
                 '}';
     }
 
-    // Override equals and hashCode
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof BudgetDTO)) return false;
-        BudgetDTO budgetDTO = (BudgetDTO) o;
-        return Double.compare(budgetDTO.amount, amount) == 0 &&  // Renamed to 'amount'
+        if (!(o instanceof BudgetDTO budgetDTO)) return false;
+        return Double.compare(budgetDTO.amount, amount) == 0 &&
                 id.equals(budgetDTO.id) &&
                 userId.equals(budgetDTO.userId) &&
                 category == budgetDTO.category;
@@ -79,6 +73,6 @@ public class BudgetDTO {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, amount, userId, category);  // Renamed to 'amount'
+        return Objects.hash(id, amount, userId, category);
     }
 }
